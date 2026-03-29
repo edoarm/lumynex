@@ -52,12 +52,29 @@ const contactForm = document.getElementById('contact-form');
 if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    const formData = new FormData(contactForm);
-    const data = Object.fromEntries(formData);
-    console.log('Form submitted:', data);
-    const lang = localStorage.getItem('lang') || 'en';
-    alert(translations[lang]['contact.form.success']);
-    contactForm.reset();
+    const btn = contactForm.querySelector('button[type="submit"]');
+    const originalText = btn.textContent;
+    btn.textContent = '...';
+    btn.disabled = true;
+
+    fetch(contactForm.action, {
+      method: 'POST',
+      body: new FormData(contactForm),
+    })
+    .then(res => {
+      const lang = localStorage.getItem('lang') || 'en';
+      if (res.ok) {
+        alert(translations[lang]['contact.form.success']);
+        contactForm.reset();
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    })
+    .catch(() => alert('Network error. Please try again.'))
+    .finally(() => {
+      btn.textContent = originalText;
+      btn.disabled = false;
+    });
   });
 }
 
@@ -89,12 +106,30 @@ document.addEventListener('keydown', (e) => {
 if (affiliateForm) {
   affiliateForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    const data = Object.fromEntries(new FormData(affiliateForm));
-    console.log('Affiliate application:', data);
-    const lang = localStorage.getItem('lang') || 'en';
-    alert(translations[lang]['modal.success']);
-    affiliateForm.reset();
-    closeAffiliateModal();
+    const btn = affiliateForm.querySelector('button[type="submit"]');
+    const originalText = btn.textContent;
+    btn.textContent = '...';
+    btn.disabled = true;
+
+    fetch(affiliateForm.action, {
+      method: 'POST',
+      body: new FormData(affiliateForm),
+    })
+    .then(res => {
+      const lang = localStorage.getItem('lang') || 'en';
+      if (res.ok) {
+        alert(translations[lang]['modal.success']);
+        affiliateForm.reset();
+        closeAffiliateModal();
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    })
+    .catch(() => alert('Network error. Please try again.'))
+    .finally(() => {
+      btn.textContent = originalText;
+      btn.disabled = false;
+    });
   });
 }
 
