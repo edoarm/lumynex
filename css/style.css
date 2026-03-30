@@ -237,17 +237,19 @@ p { font-size: 16px; }
 [data-theme="light"] .theme-toggle .icon-moon { display: none; }
 
 @media (max-width: 768px) {
-  .navbar { padding: 0 12px; height: 60px; }
+  .navbar { padding: 0 16px; height: 60px; }
+  .navbar-container { gap: 8px; }
   .navbar-links { display: none; }
-  .navbar-logo { font-size: 14px; gap: 6px; min-width: auto; }
-  .navbar-logo .logomark-svg { height: 24px; }
+  .navbar-logo { font-size: 14px; gap: 6px; min-width: 0; flex-shrink: 1; overflow: hidden; }
+  .navbar-logo .logomark-svg { height: 24px; flex-shrink: 0; }
   .navbar-logo .wordmark-dark,
   .navbar-logo .wordmark-light { height: 16px; }
   .navbar-logo-icon { width: 20px; height: 20px; }
-  .navbar-actions { min-width: auto; gap: 8px; }
+  .navbar-actions { min-width: 0; gap: 8px; flex-shrink: 0; }
   .navbar-actions .btn-primary {
     padding: 8px 14px;
     font-size: 12px;
+    white-space: nowrap;
   }
   .theme-toggle { width: 32px; height: 32px; }
   .theme-toggle svg { width: 14px; height: 14px; }
