@@ -237,11 +237,20 @@ p { font-size: 16px; }
 [data-theme="light"] .theme-toggle .icon-moon { display: none; }
 
 @media (max-width: 768px) {
-  .navbar { padding: 0 16px; }
+  .navbar { padding: 0 12px; height: 60px; }
   .navbar-links { display: none; }
-  .navbar-logo { font-size: 14px; gap: 8px; min-width: auto; }
+  .navbar-logo { font-size: 14px; gap: 6px; min-width: auto; }
+  .navbar-logo .logomark-svg { height: 24px; }
+  .navbar-logo .wordmark-dark,
+  .navbar-logo .wordmark-light { height: 16px; }
   .navbar-logo-icon { width: 20px; height: 20px; }
-  .navbar-actions { min-width: auto; }
+  .navbar-actions { min-width: auto; gap: 8px; }
+  .navbar-actions .btn-primary {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+  .theme-toggle { width: 32px; height: 32px; }
+  .theme-toggle svg { width: 14px; height: 14px; }
 }
 
 /* ═══════════ HERO (SPLIT LAYOUT) ═══════════ */
@@ -1508,9 +1517,10 @@ p { font-size: 16px; }
 @media (max-width: 768px) {
   .lang-switcher {
     gap: 1px;
+    padding: 1px;
   }
   .lang-btn {
-    padding: 4px 8px;
-    font-size: 11px;
+    padding: 3px 6px;
+    font-size: 10px;
   }
 }
