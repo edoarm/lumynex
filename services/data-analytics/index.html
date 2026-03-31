@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M9JDZDLQ');</script>
+<!-- End Google Tag Manager -->
+
+<!-- ═══════════ GOOGLE ANALYTICS ═══════════ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V896DD1LDB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-V896DD1LDB');
+</script>
+
+<!-- ═══════════ PRIMARY SEO ═══════════ -->
+<title>Data &amp; Analytics — Attribution, BI Dashboards &amp; LTV Reporting | Lumynex</title>
+<meta name="description" content="Lumynex builds custom attribution models, BI dashboards, cohort reports, and LTV analysis so you always know exactly which channels drive revenue — not just traffic.">
+<link rel="canonical" href="https://lumynex.org/services/data-analytics/">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="author" content="Lumynex">
+
+<!-- ═══════════ OPEN GRAPH ═══════════ -->
+<meta property="og:title" content="Data & Analytics Services | Lumynex">
+<meta property="og:description" content="Full-stack analytics for iGaming and digital brands — attribution modeling, BI dashboards, LTV analysis, and cohort reporting tied to real revenue.">
+<meta property="og:url" content="https://lumynex.org/services/data-analytics/">
+<meta property="og:image" content="https://lumynex.org/images/og-image.png">
+<meta property="og:type" content="website">
+
+<!-- ═══════════ STRUCTURED DATA (JSON-LD) ═══════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Data & Analytics",
+  "description": "Attribution modeling, BI dashboards, LTV analysis, and cohort reporting for full revenue visibility across iGaming and digital marketing channels.",
+  "provider": {"@type":"Organization","name":"Lumynex","url":"https://lumynex.org"},
+  "serviceType": "Marketing Analytics & Attribution",
+  "areaServed": "Worldwide",
+  "url": "https://lumynex.org/services/data-analytics/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://lumynex.org/"},
+    {"@type":"ListItem","position":2,"name":"Services","item":"https://lumynex.org/services/"},
+    {"@type":"ListItem","position":3,"name":"Data & Analytics","item":"https://lumynex.org/services/data-analytics/"}
+  ]
+}
+</script>
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 868 1062' fill='%230062ff'%3E%3Cpath d='M6.4,5.9h301.9v122.2h-164.1v802.7h164.1v122.2H6.4V5.9Z'/%3E%3Cpath d='M365.5,128.1h137.8v802.7h-137.8V128.1Z'/%3E%3Cpath d='M861.7,1053h-301.9v-122.2h164.1V128.1h-164.1V5.9h301.9v1047.1Z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+
+<style>
+/* ── STARFIELD PAGE ── */
+body.da-page { background: #03030a; position: relative; }
+#starCanvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.7;
+}
+.da-page > *:not(#starCanvas):not(.cursor-glow) { position: relative; z-index: 1; }
+.da-page > nav, .da-page > section:last-of-type { position: relative; z-index: 10; }
+
+/* ── BREADCRUMB ── */
+.da-breadcrumb {
+  padding: 100px 32px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 13px;
+  color: rgba(232,232,240,0.5);
+}
+.da-breadcrumb a { color: rgba(232,232,240,0.5); text-decoration: none; }
+.da-breadcrumb a:hover { color: rgba(232,232,240,0.8); }
+.da-breadcrumb .da-bread-sep { margin: 0 8px; opacity: 0.5; }
+.da-breadcrumb .da-bread-current { color: rgba(255,255,255,0.9); }
+
+/* ── HERO ── */
+.da-hero { padding: 60px 0 100px; text-align: center; }
+.da-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 16px;
+  border: 1px solid rgba(0,98,255,0.3);
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #3385ff;
+  margin-bottom: 32px;
+  opacity: 0;
+  animation: daFadeUp 0.5s cubic-bezier(0.16,1,0.3,1) 0.1s forwards;
+}
+.da-h1 {
+  font-size: clamp(52px, 7vw, 96px);
+  font-weight: 900;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  margin: 0 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.da-line { display: block; color: #ffffff; overflow: hidden; }
+.da-line--dim { color: rgba(232,232,240,0.4); }
+.da-line > span {
+  display: block;
+  transform: translateY(110%);
+  opacity: 0;
+}
+.da-hero-sub {
+  font-size: clamp(15px,2vw,20px);
+  color: #3385ff;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin: 0 0 16px;
+  opacity: 0;
+  animation: daFadeUp 0.6s ease 0.9s forwards;
+}
+.da-hero-body {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-2);
+  max-width: 600px;
+  margin: 0 auto 40px;
+  opacity: 0;
+  animation: daFadeUp 0.6s ease 1.1s forwards;
+}
+.da-hero-ctas {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  opacity: 0;
+  animation: daFadeUp 0.6s ease 1.3s forwards;
+}
+
+/* ── STEPS SECTION ── */
+.da-steps { padding: 80px 0 120px; text-align: center; }
+.da-steps-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  margin-bottom: 20px;
+}
+.da-steps-title {
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin: 0 0 16px;
+}
+.da-steps-desc {
+  font-size: 16px;
+  color: var(--text-2);
+  margin: 0 auto 80px;
+  max-width: 500px;
+}
+
+/* Connector */
+.da-steps-track { position: relative; }
+.da-connector {
+  position: absolute;
+  top: 52px;
+  left: 15%; right: 15%;
+  height: 1px;
+  z-index: 1;
+  pointer-events: none;
+}
+.da-connector-line {
+  position: absolute;
+  top: 0; left: 0;
+  height: 1px;
+  width: 0%;
+  background: linear-gradient(to right, transparent, rgba(0,98,255,0.4) 20%, rgba(0,98,255,0.4) 80%, transparent);
+  transition: width 1.2s cubic-bezier(0.16,1,0.3,1) 0.4s;
+}
+.da-connector-line.da-line--drawn { width: 100%; }
+.da-connector-dot {
+  position: absolute;
+  top: -5px;
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  background: rgba(0,98,255,0.6);
+  border: 2px solid rgba(0,98,255,0.4);
+  transform: scale(0);
+  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+.da-connector-dot.da-dot--visible { transform: scale(1); }
+.da-dot--1 { left: 0%; transition-delay: 0.6s; }
+.da-dot--2 { left: 50%; transform: translateX(-50%) scale(0); transition-delay: 0.9s; }
+.da-dot--2.da-dot--visible { transform: translateX(-50%) scale(1); }
+.da-dot--3 { right: 0%; transition-delay: 1.2s; }
+
+/* Step cards grid */
+.da-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
+.da-step-card {
+  background: rgba(8,8,18,0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.da-step-card.da-card--visible { opacity: 1; transform: translateY(0); }
+.da-step-card--1.da-card--visible { transition-delay: 0.1s; }
+.da-step-card--2.da-card--visible { transition-delay: 0.3s; }
+.da-step-card--3.da-card--visible { transition-delay: 0.5s; }
+.da-step-card:hover {
+  border-color: rgba(0,98,255,0.25);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 40px rgba(0,98,255,0.08);
+}
+.da-step-num { display: none; }
+.da-step-visual {
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.da-step-card--2 .da-step-visual::before {
+  content: '';
+  position: absolute;
+  bottom: -20px; left: 50%;
+  transform: translateX(-50%);
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(0,98,255,0.35) 0%, transparent 70%);
+  pointer-events: none;
+}
+.da-step-content {
+  padding: 24px 24px 32px;
+  text-align: left;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+.da-step-title { font-size: 18px; font-weight: 700; color: #ffffff; margin: 0 0 10px; }
+.da-step-desc { font-size: 14px; line-height: 1.65; color: var(--text-2); margin: 0; }
+
+/* ── ATTRIBUTION MOCKUP ── */
+.da-attrib-mockup { width: 100%; display: flex; flex-direction: column; gap: 8px; }
+.da-attrib-row {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 12px; border-radius: 10px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  font-size: 12px;
+}
+.da-attrib-row--active { background: rgba(0,98,255,0.08); border-color: rgba(0,98,255,0.2); }
+.da-attrib-source { flex: 1; font-weight: 600; color: var(--text); }
+.da-src--organic { color: #22c55e; }
+.da-src--paid { color: #3385ff; }
+.da-src--affiliate { color: #f59e0b; }
+.da-src--email { color: #a855f7; }
+.da-attrib-arrow { color: var(--text-2); font-size: 11px; }
+.da-attrib-pct { font-weight: 700; color: var(--text); font-size: 12px; }
+.da-attrib-outcome {
+  display: flex; align-items: center; gap: 8px;
+  margin-top: 8px; padding: 10px 14px; border-radius: 10px;
+  background: rgba(0,98,255,0.12);
+  border: 1px solid rgba(0,98,255,0.25);
+}
+.da-outcome-icon { color: #0062ff; font-weight: 700; }
+.da-outcome-label { font-size: 12px; color: var(--text); flex: 1; }
+.da-outcome-value { font-size: 12px; font-weight: 700; color: #3385ff; }
+
+/* ── DASHBOARD MOCKUP ── */
+.da-dashboard-mockup {
+  width: 100%;
+  background: rgba(4,4,12,0.8);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 16px;
+}
+.da-db-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.da-db-title { font-size: 11px; font-weight: 700; color: var(--text); }
+.da-db-badge { font-size: 9px; font-weight: 700; color: #22c55e; letter-spacing: 0.08em; }
+.da-db-kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+.da-db-kpi { display: flex; flex-direction: column; gap: 2px; }
+.da-db-kpi-val { font-size: 20px; font-weight: 900; color: #fff; }
+.da-db-kpi-label { font-size: 10px; color: var(--text-2); }
+.da-db-kpi-trend { font-size: 10px; font-weight: 600; }
+.da-trend--up { color: #22c55e; }
+.da-db-chart {
+  display: flex; align-items: flex-end; gap: 4px; height: 50px;
+  border-top: 1px solid rgba(255,255,255,0.05); padding-top: 8px;
+}
+.da-db-bar {
+  flex: 1; background: rgba(0,98,255,0.25);
+  border-radius: 3px 3px 0 0;
+  transition: height 1s cubic-bezier(0.16,1,0.3,1);
+}
+.da-db-bar--active { background: #0062ff; box-shadow: 0 0 10px rgba(0,98,255,0.5); }
+
+/* ── COHORT MOCKUP ── */
+.da-cohort-mockup { width: 100%; }
+.da-cohort-header { margin-bottom: 12px; }
+.da-cohort-label { font-size: 11px; font-weight: 700; color: var(--text-2); text-transform: uppercase; letter-spacing: 0.08em; }
+.da-cohort-grid { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+.da-cohort-row { display: flex; align-items: center; gap: 6px; }
+.da-cohort-week { font-size: 10px; color: var(--text-2); width: 28px; flex-shrink: 0; }
+.da-cohort-cell {
+  flex: 1; height: 32px; border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.9);
+}
+.da-cell--100 { background: rgba(0,98,255,0.7); }
+.da-cell--81 { background: rgba(0,98,255,0.55); }
+.da-cell--78 { background: rgba(0,98,255,0.5); }
+.da-cell--72 { background: rgba(0,98,255,0.42); }
+.da-cell--61 { background: rgba(0,98,255,0.35); }
+.da-cell--58 { background: rgba(0,98,255,0.3); }
+.da-cell--44 { background: rgba(0,98,255,0.22); }
+.da-cell--empty { background: rgba(255,255,255,0.04); color: var(--text-2); font-weight: 400; }
+.da-cohort-ltv {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 14px; background: rgba(0,98,255,0.1);
+  border: 1px solid rgba(0,98,255,0.2); border-radius: 10px;
+  font-size: 12px; color: var(--text-2);
+}
+.da-ltv-val { font-weight: 700; color: #3385ff; font-size: 14px; }
+
+/* Steps CTA */
+.da-steps-cta { margin-top: 64px; display: flex; justify-content: center; }
+.da-steps-cta-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 32px;
+  background: rgba(20,20,40,0.9);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 100px;
+  font-size: 15px; font-weight: 600;
+  color: var(--text); text-decoration: none;
+  transition: all 0.25s ease;
+}
+.da-steps-cta-btn:hover {
+  background: rgba(0,98,255,0.15);
+  border-color: rgba(0,98,255,0.4);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* ── DIFFERENTIATOR ── */
+.da-diff { padding: 100px 0; border-top: 1px solid var(--border); }
+.da-diff-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.da-diff-text h2 {
+  font-size: clamp(32px,4vw,52px); font-weight: 900;
+  letter-spacing: -0.03em; color: #fff; margin: 16px 0 20px; line-height: 1.1;
+}
+.da-diff-text p { font-size: 16px; line-height: 1.7; color: var(--text-2); }
+.da-diff-stats { display: flex; flex-direction: column; gap: 16px; }
+.da-stat-card {
+  padding: 24px; background: var(--bg-card);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  display: flex; flex-direction: column; gap: 6px;
+}
+.da-stat-num { font-size: 28px; font-weight: 900; color: #ffffff; }
+.da-stat-label { font-size: 13px; color: var(--text-2); }
+
+/* ── WHO THIS IS FOR ── */
+.da-who { padding: 80px 0; text-align: center; border-top: 1px solid var(--border); }
+.da-who-title {
+  font-size: clamp(28px,4vw,48px); font-weight: 900;
+  color: #fff; margin: 16px 0 40px; letter-spacing: -0.02em;
+}
+.da-who-pills { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.da-pill {
+  padding: 8px 20px; border-radius: 100px;
+  background: var(--bg-card); border: 1px solid var(--border-2);
+  font-size: 13px; font-weight: 500; color: var(--text-2);
+  transition: border-color 0.2s, color 0.2s;
+}
+.da-pill:hover { border-color: rgba(0,98,255,0.3); color: var(--text); }
+
+/* ── KEYFRAMES ── */
+@keyframes daFadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 900px) {
+  .da-breadcrumb { padding-top: 80px; }
+  .da-steps-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+  .da-connector { display: none; }
+  .da-step-visual { height: 240px; }
+  .da-diff-inner { grid-template-columns: 1fr; gap: 40px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .da-line > span, .da-eyebrow, .da-hero-sub, .da-hero-body, .da-hero-ctas {
+    animation: none !important; opacity: 1 !important; transform: none !important;
+  }
+  .da-step-card { opacity: 1 !important; transform: none !important; }
+  .da-connector-line { width: 100% !important; }
+  .da-connector-dot { transform: scale(1) !important; }
+  .da-dot--2 { transform: translateX(-50%) scale(1) !important; }
+}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M9JDZDLQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<nav class="navbar">
+  <div class="navbar-container">
+    <a href="/" class="navbar-logo">
+      <svg class="logomark-svg" viewBox="0 0 868 1061.8" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6.4,5.9h301.9v122.2h-164.1v802.7h164.1v122.2H6.4V5.9Z"/>
+        <path d="M365.5,128.1h137.8v802.7h-137.8V128.1Z"/>
+        <path d="M861.7,1053h-301.9v-122.2h164.1V128.1h-164.1V5.9h301.9v1047.1Z"/>
+      </svg>
+      <img class="wordmark-dark" src="../../images/wordmark-dark.png" alt="Lumynex" height="28">
+      <img class="wordmark-light" src="../../images/wordmark-light.png" alt="Lumynex" height="28">
+    </a>
+    <div class="navbar-links">
+      <a href="/services/" class="navbar-link active" data-i18n="nav.services">Services</a>
+      <a href="/industries/" class="navbar-link" data-i18n="nav.industries">Industries</a>
+      <a href="/#why" class="navbar-link" data-i18n="nav.whyus">Why Us</a>
+      <a href="/#process" class="navbar-link" data-i18n="nav.process">Process</a>
+      <a href="/#contact" class="navbar-link" data-i18n="nav.contact">Contact</a>
+    </div>
+    <div class="navbar-actions">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="es">ES</button>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="/#contact" class="btn-primary" data-i18n="nav.getstarted">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════ BREADCRUMB ═══════════ -->
+<nav class="da-breadcrumb" aria-label="Breadcrumb">
+  <a href="/" data-i18n="datan.bread.home">Home</a>
+  <span class="da-bread-sep">/</span>
+  <a href="/services/" data-i18n="datan.bread.services">Services</a>
+  <span class="da-bread-sep">/</span>
+  <span class="da-bread-current" data-i18n="datan.bread.current">Data &amp; Analytics</span>
+</nav>
+
+<!-- ═══════════ SECTION 1: HERO ═══════════ -->
+<section class="da-hero">
+  <div class="container">
+    <div class="da-eyebrow" data-i18n="datan.hero.badge">Data &amp; Analytics</div>
+    <h1 class="da-h1">
+      <span class="da-line" data-i18n="datan.hero.heading">Stop Guessing.</span>
+      <span class="da-line da-line--dim" data-i18n="datan.hero.heading.dim">Start Knowing.</span>
+    </h1>
+    <p class="da-hero-sub">
+      Attribution. BI Dashboards. LTV. Cohorts.
+    </p>
+    <p class="da-hero-body" data-i18n="datan.hero.sub">
+      Most marketing teams make decisions based on incomplete data. Lumynex builds the analytics infrastructure that shows you exactly which channels, campaigns, and funnels are generating revenue &mdash; and which ones are burning it.
+    </p>
+    <div class="da-hero-ctas">
+      <a href="/#contact" class="btn-primary" data-i18n="datan.hero.cta.talk">Let's Talk &#8594;</a>
+      <a href="/services/" class="btn-secondary" data-i18n="datan.hero.cta.services">All Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SECTION 2: THREE STEP CARDS ═══════════ -->
+<section class="da-steps" id="services">
+  <div class="container">
+
+    <div class="da-steps-label" data-i18n="datan.services.label">Analytics Services</div>
+    <h2 class="da-steps-title" data-i18n="datan.services.title">Full Revenue Visibility.</h2>
+    <p class="da-steps-desc" data-i18n="datan.services.desc">
+      Every number tied to what actually matters &mdash; depositing users, LTV, and ROAS.
+    </p>
+
+    <!-- Connector line + cards wrapper -->
+    <div class="da-steps-track">
+
+      <!-- Horizontal connector line -->
+      <div class="da-connector">
+        <div class="da-connector-line"></div>
+        <div class="da-connector-dot da-dot--1"></div>
+        <div class="da-connector-dot da-dot--2"></div>
+        <div class="da-connector-dot da-dot--3"></div>
+      </div>
+
+      <!-- 3 Step Cards -->
+      <div class="da-steps-grid">
+
+        <!-- CARD 1: Attribution Modeling -->
+        <div class="da-step-card da-step-card--1">
+          <div class="da-step-num">1</div>
+          <div class="da-step-visual">
+            <div class="da-attrib-mockup">
+              <div class="da-attrib-row">
+                <div class="da-attrib-source da-src--organic">Organic Search</div>
+                <div class="da-attrib-arrow">&#8594;</div>
+                <div class="da-attrib-pct">38%</div>
+              </div>
+              <div class="da-attrib-row da-attrib-row--active">
+                <div class="da-attrib-source da-src--paid">Google Ads</div>
+                <div class="da-attrib-arrow">&#8594;</div>
+                <div class="da-attrib-pct">29%</div>
+              </div>
+              <div class="da-attrib-row">
+                <div class="da-attrib-source da-src--affiliate">Affiliate</div>
+                <div class="da-attrib-arrow">&#8594;</div>
+                <div class="da-attrib-pct">21%</div>
+              </div>
+              <div class="da-attrib-row">
+                <div class="da-attrib-source da-src--email">Email</div>
+                <div class="da-attrib-arrow">&#8594;</div>
+                <div class="da-attrib-pct">12%</div>
+              </div>
+              <div class="da-attrib-outcome">
+                <div class="da-outcome-icon">&#10003;</div>
+                <div class="da-outcome-label">FTD Attributed</div>
+                <div class="da-outcome-value">$6.20 CPD</div>
+              </div>
+            </div>
+          </div>
+          <div class="da-step-content">
+            <h3 class="da-step-title" data-i18n="datan.card.1.title">Attribution Modeling</h3>
+            <p class="da-step-desc" data-i18n="datan.card.1.desc">Custom multi-touch attribution across 15+ platforms &mdash; so you know the true source of every conversion, not just the last click.</p>
+          </div>
+        </div>
+
+        <!-- CARD 2: BI Dashboards -->
+        <div class="da-step-card da-step-card--2">
+          <div class="da-step-num">2</div>
+          <div class="da-step-visual">
+            <div class="da-dashboard-mockup">
+              <div class="da-db-header">
+                <span class="da-db-title">Revenue Dashboard</span>
+                <span class="da-db-badge">&#9679; LIVE</span>
+              </div>
+              <div class="da-db-kpis">
+                <div class="da-db-kpi">
+                  <span class="da-db-kpi-val">$2.4M</span>
+                  <span class="da-db-kpi-label">Monthly Rev</span>
+                  <span class="da-db-kpi-trend da-trend--up">&#8593; 18%</span>
+                </div>
+                <div class="da-db-kpi">
+                  <span class="da-db-kpi-val">4.2x</span>
+                  <span class="da-db-kpi-label">ROAS</span>
+                  <span class="da-db-kpi-trend da-trend--up">&#8593; 0.4x</span>
+                </div>
+              </div>
+              <div class="da-db-chart">
+                <div class="da-db-bar" style="height:45%"></div>
+                <div class="da-db-bar" style="height:60%"></div>
+                <div class="da-db-bar" style="height:52%"></div>
+                <div class="da-db-bar" style="height:75%"></div>
+                <div class="da-db-bar" style="height:65%"></div>
+                <div class="da-db-bar da-db-bar--active" style="height:90%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="da-step-content">
+            <h3 class="da-step-title" data-i18n="datan.card.2.title">BI Dashboards</h3>
+            <p class="da-step-desc" data-i18n="datan.card.2.desc">Real-time business intelligence dashboards built for iGaming operators, CMOs, and growth teams &mdash; all your KPIs in one view.</p>
+          </div>
+        </div>
+
+        <!-- CARD 3: LTV & Cohort Analysis -->
+        <div class="da-step-card da-step-card--3">
+          <div class="da-step-num">3</div>
+          <div class="da-step-visual">
+            <div class="da-cohort-mockup">
+              <div class="da-cohort-header">
+                <span class="da-cohort-label">Cohort Retention</span>
+              </div>
+              <div class="da-cohort-grid">
+                <div class="da-cohort-row">
+                  <span class="da-cohort-week">Jan</span>
+                  <div class="da-cohort-cell da-cell--100">100%</div>
+                  <div class="da-cohort-cell da-cell--72">72%</div>
+                  <div class="da-cohort-cell da-cell--58">58%</div>
+                  <div class="da-cohort-cell da-cell--44">44%</div>
+                </div>
+                <div class="da-cohort-row">
+                  <span class="da-cohort-week">Feb</span>
+                  <div class="da-cohort-cell da-cell--100">100%</div>
+                  <div class="da-cohort-cell da-cell--78">78%</div>
+                  <div class="da-cohort-cell da-cell--61">61%</div>
+                  <div class="da-cohort-cell da-cell--empty">&mdash;</div>
+                </div>
+                <div class="da-cohort-row">
+                  <span class="da-cohort-week">Mar</span>
+                  <div class="da-cohort-cell da-cell--100">100%</div>
+                  <div class="da-cohort-cell da-cell--81">81%</div>
+                  <div class="da-cohort-cell da-cell--empty">&mdash;</div>
+                  <div class="da-cohort-cell da-cell--empty">&mdash;</div>
+                </div>
+              </div>
+              <div class="da-cohort-ltv">
+                <span>Avg LTV</span>
+                <span class="da-ltv-val">$284 / user</span>
+              </div>
+            </div>
+          </div>
+          <div class="da-step-content">
+            <h3 class="da-step-title" data-i18n="datan.card.3.title">LTV &amp; Cohort Analysis</h3>
+            <p class="da-step-desc">Understand the lifetime value of users acquired by each channel, campaign, and creative &mdash; and optimize spend accordingly. Track cohort retention over time.</p>
+          </div>
+        </div>
+
+      </div><!-- /da-steps-grid -->
+    </div><!-- /da-steps-track -->
+
+    <!-- CTA below cards -->
+    <div class="da-steps-cta">
+      <a href="/#contact" class="da-steps-cta-btn" data-i18n="datan.cta.title">
+        Ready to See the Full Picture? &#8594;
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════ SECTION 3: DIFFERENTIATOR ═══════════ -->
+<section class="da-diff">
+  <div class="container">
+    <div class="da-diff-inner">
+      <div class="da-diff-text">
+        <div class="da-eyebrow">Why It Matters</div>
+        <h2>15+ Platforms.<br>One Clear Picture.</h2>
+        <p>
+          Google Analytics, Meta Ads Manager, your CRM, your affiliate platform, your sportsbook backend &mdash; they all tell a different story. Lumynex connects them into a single attribution layer so you're making decisions based on truth, not assumption.
+        </p>
+      </div>
+      <div class="da-diff-stats">
+        <div class="da-stat-card">
+          <span class="da-stat-num">15+</span>
+          <span class="da-stat-label">Platforms connected and tracked</span>
+        </div>
+        <div class="da-stat-card">
+          <span class="da-stat-num">Real&#8209;Time</span>
+          <span class="da-stat-label">Live dashboards updated continuously</span>
+        </div>
+        <div class="da-stat-card">
+          <span class="da-stat-num">Revenue&#8209;First</span>
+          <span class="da-stat-label">Every metric mapped to financial outcomes</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SECTION 4: WHO THIS IS FOR ═══════════ -->
+<section class="da-who">
+  <div class="container">
+    <div class="da-eyebrow">Built For</div>
+    <h2 class="da-who-title">Teams That Run on Data.</h2>
+    <div class="da-who-pills">
+      <span class="da-pill">iGaming Operators</span>
+      <span class="da-pill">Sportsbooks</span>
+      <span class="da-pill">Forex Brokers</span>
+      <span class="da-pill">Crypto Platforms</span>
+      <span class="da-pill">FinTech</span>
+      <span class="da-pill">SaaS</span>
+      <span class="da-pill">CMOs &amp; Growth Teams</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SECTION 5: CTA BANNER ═══════════ -->
+<section class="cta">
+  <div class="container">
+    <h2 class="reveal" data-i18n="datan.cta.title">Ready to See the Full Picture?</h2>
+    <p class="reveal reveal-d1" data-i18n="datan.cta.desc">We build the data infrastructure. You make better decisions.</p>
+    <div class="cta-actions reveal reveal-d2">
+      <a href="/#contact" class="btn-primary"><span data-i18n="datan.cta.start">Get Started</span> <span>&#8594;</span></a>
+      <a href="/services/" class="btn-secondary" data-i18n="datan.cta.all">See All Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<section class="contact" style="padding-top: 0;">
+  <div class="container">
+    <footer class="footer">
+      <div class="footer-brand">
+        <svg class="logomark-svg" viewBox="0 0 868 1061.8" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6.4,5.9h301.9v122.2h-164.1v802.7h164.1v122.2H6.4V5.9Z"/>
+          <path d="M365.5,128.1h137.8v802.7h-137.8V128.1Z"/>
+          <path d="M861.7,1053h-301.9v-122.2h164.1V128.1h-164.1V5.9h301.9v1047.1Z"/>
+        </svg>
+        <img class="wordmark-dark" src="../../images/wordmark-dark.png" alt="Lumynex" height="22">
+        <img class="wordmark-light" src="../../images/wordmark-light.png" alt="Lumynex" height="22">
+        <span style="color: var(--text-3); font-size: 12px; margin-left: 8px;" data-i18n="footer.copy">&copy; 2026 Lumynex. All rights reserved.</span>
+      </div>
+    </footer>
+  </div>
+</section>
+
+<script src="../../js/translations.js"></script>
+<script src="../../js/main.js"></script>
+
+<!-- ═══════════ DATA ANALYTICS PAGE SCRIPTS ═══════════ -->
+<script>
+(function(){
+  // 1. STARFIELD CANVAS
+  var starCanvas = document.createElement('canvas');
+  starCanvas.id = 'starCanvas';
+  document.body.prepend(starCanvas);
+  document.body.classList.add('da-page');
+
+  var sc = starCanvas.getContext('2d');
+  var stars = [];
+
+  function initStars(){
+    starCanvas.width = window.innerWidth;
+    starCanvas.height = window.innerHeight;
+    stars = [];
+    for(var i = 0; i < 180; i++){
+      stars.push({
+        x: Math.random() * starCanvas.width,
+        y: Math.random() * starCanvas.height,
+        r: Math.random() * 1.2 + 0.2,
+        a: Math.random() * 0.6 + 0.1,
+        speed: Math.random() * 0.15 + 0.05
+      });
+    }
+  }
+
+  function drawStars(){
+    sc.clearRect(0, 0, starCanvas.width, starCanvas.height);
+    for(var i = 0; i < stars.length; i++){
+      var s = stars[i];
+      sc.beginPath();
+      sc.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      sc.fillStyle = 'rgba(255,255,255,' + s.a + ')';
+      sc.fill();
+      s.y -= s.speed;
+      if(s.y < 0){
+        s.y = starCanvas.height;
+        s.x = Math.random() * starCanvas.width;
+      }
+    }
+    requestAnimationFrame(drawStars);
+  }
+
+  initStars();
+  drawStars();
+  window.addEventListener('resize', initStars);
+
+  // 2. H1 CURTAIN REVEAL
+  document.querySelectorAll('.da-line').forEach(function(line){
+    line.innerHTML = '<span>' + line.innerHTML + '</span>';
+  });
+  var daLines = document.querySelectorAll('.da-line > span');
+  var daDelays = [0.3, 0.55];
+  daLines.forEach(function(span, i){
+    span.style.transition =
+      'transform 0.9s cubic-bezier(0.16,1,0.3,1) ' + daDelays[i] + 's, ' +
+      'opacity 0.85s cubic-bezier(0.16,1,0.3,1) ' + daDelays[i] + 's';
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){
+        span.style.transform = 'translateY(0)';
+        span.style.opacity = '1';
+      });
+    });
+  });
+
+  // 3. INTERSECTION OBSERVER FOR STEP CARDS + CONNECTOR
+  var stepsTrack = document.querySelector('.da-steps-track');
+  if(stepsTrack){
+    var observed = false;
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting && !observed){
+          observed = true;
+          // Draw connector line
+          var line = document.querySelector('.da-connector-line');
+          if(line) line.classList.add('da-line--drawn');
+          // Show dots
+          document.querySelectorAll('.da-connector-dot').forEach(function(dot){
+            dot.classList.add('da-dot--visible');
+          });
+          // Reveal cards
+          document.querySelectorAll('.da-step-card').forEach(function(card){
+            card.classList.add('da-card--visible');
+          });
+        }
+      });
+    }, { threshold: 0.15 });
+    observer.observe(stepsTrack);
+  }
+})();
+</script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+</body>
+</html>
