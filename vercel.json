@@ -37,9 +37,14 @@
   ],
   "redirects": [
     { "source": "/home", "destination": "/", "statusCode": 301 },
-    { "source": "/index.html", "destination": "/", "statusCode": 301 }
-  ],
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/index.html", "destination": "/", "statusCode": 301 },
+    { "source": "/services/marketing-automation", "destination": "/services/paid-media", "statusCode": 301 },
+    { "source": "/services/cro-funnel-optimization", "destination": "/services/paid-media", "statusCode": 301 },
+    { "source": "/industries/igaming", "destination": "/industries#igaming", "statusCode": 301 },
+    { "source": "/industries/sports-betting", "destination": "/industries#sports-betting", "statusCode": 301 },
+    { "source": "/industries/forex-trading", "destination": "/industries#forex-trading", "statusCode": 301 },
+    { "source": "/industries/crypto-web3", "destination": "/industries#crypto-web3", "statusCode": 301 },
+    { "source": "/industries/fintech", "destination": "/industries#fintech", "statusCode": 301 },
+    { "source": "/industries/saas", "destination": "/industries#saas", "statusCode": 301 }
   ]
 }

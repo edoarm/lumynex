@@ -1,4 +1,14 @@
 User-agent: *
 Allow: /
 
+# Block redirect stubs from crawling
+Disallow: /services/marketing-automation
+Disallow: /services/cro-funnel-optimization
+Disallow: /industries/igaming
+Disallow: /industries/sports-betting
+Disallow: /industries/forex-trading
+Disallow: /industries/crypto-web3
+Disallow: /industries/fintech
+Disallow: /industries/saas
+
 Sitemap: https://lumynex.org/sitemap.xml
